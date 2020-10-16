@@ -3,5 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
-
+  
+  <Target Name="Create bundles" BeforeTargets="BeforeBuild">
+    <Exec Command="npm i" />
+    <Exec Command="npm run build" />
+  </Target>
 </Project>
