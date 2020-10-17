@@ -1,2 +1,4 @@
-# aspnet-bootstrap-sass
-Example project showing how to setup Bootstrap SASS in a ASPNET Core project
+# Setting up Bootstrap 4 SASS with ASPNET Core
+Example project showing how to setup Bootstrap SASS in a ASPNET Core project.
+
+See [blog](https://dev.to/robinvanderknaap/setting-up-bootstrap-sass-with-aspnet-core) for more information
