@@ -22,16 +22,24 @@ module.exports = (env, argv) => {
                             'style-loader',
                             MiniCssExtractPlugin.loader,
                             'css-loader',
-                            // {
-                            //     loader: 'postcss-loader',
-                            //     options: {
-                            //         config: {
-                            //             ctx: {
-                            //                 env: argv.mode
-                            //             }
-                            //         }
-                            //     }
-                            // },
+                            {
+                                loader: 'postcss-loader', // Run postcss actions
+                                options: {
+                                    postcssOptions: {
+                                        plugins: function () { // postcss plugins, can be exported to postcss.config.js
+                                            
+                                            let plugins = [require('autoprefixer')];
+                                            
+                                            if(argv.mode === "production") {
+                                                
+                                                plugins.push(require('cssnano'));
+                                            }
+                                            
+                                            return plugins;
+                                        }
+                                    }
+                                }
+                            },
                             'sass-loader'
                         ]
                 }
